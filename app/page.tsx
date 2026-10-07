@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { BASE_URL } from '@/lib/constants';
+import { BASE_URL, MAIN_SITE_URL, APP_NAME } from '@/lib/constants';
 import { CalculatorApp } from '@/components/calculator-app';
 import { SeoContentSection, FAQ_ITEMS } from '@/components/seo-content-section';
 import { ColumnCard } from '@/components/column-card';
@@ -74,6 +74,26 @@ export default function HomePage() {
     })),
   };
 
+  // 構造化データ: BreadcrumbList
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'ホーム',
+        item: MAIN_SITE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: APP_NAME,
+        item: BASE_URL,
+      },
+    ],
+  };
+
   return (
     <>
       {/* 構造化データ（JSON-LD） */}
@@ -84,6 +104,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* メインツール本体（クライアントコンポーネント） */}
