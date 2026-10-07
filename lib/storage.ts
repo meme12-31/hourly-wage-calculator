@@ -18,7 +18,7 @@ export function loadSettingsFromStorage(): UserShiftSettings {
     }
 
     return {
-      wage: typeof parsed.wage === 'number' && parsed.wage > 0 ? parsed.wage : DEFAULT_SETTINGS.wage,
+      wage: typeof parsed.wage === 'number' && parsed.wage >= 0 ? parsed.wage : DEFAULT_SETTINGS.wage,
       targetMonthlyIncome:
         typeof parsed.targetMonthlyIncome === 'number' && parsed.targetMonthlyIncome >= 0
           ? parsed.targetMonthlyIncome

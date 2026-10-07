@@ -69,7 +69,7 @@ export const InputSection: React.FC<InputSectionProps> = ({ settings, onChange }
               inputMode="numeric"
               value={settings.wage === 0 ? '' : settings.wage}
               onChange={handleWageChange}
-              placeholder="1100"
+              placeholder="0"
               className="w-full pl-3 pr-10 py-2.5 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 font-bold text-slate-800 text-base transition"
             />
             <span className="absolute right-3 top-2.5 text-slate-400 font-medium text-sm">円</span>
@@ -108,7 +108,7 @@ export const InputSection: React.FC<InputSectionProps> = ({ settings, onChange }
               inputMode="numeric"
               value={settings.targetMonthlyIncome === 0 ? '' : settings.targetMonthlyIncome}
               onChange={handleTargetChange}
-              placeholder="100000"
+              placeholder="0"
               className="w-full pl-3 pr-10 py-2.5 rounded-lg border border-slate-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 font-bold text-slate-800 text-base transition"
             />
             <span className="absolute right-3 top-2.5 text-slate-400 font-medium text-sm">円</span>

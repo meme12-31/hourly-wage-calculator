@@ -5,16 +5,16 @@ export const BASE_PATH = '/hourly-wage-calculator';
 export const BASE_URL = 'https://hit-tool.com/hourly-wage-calculator';
 export const MAIN_SITE_URL = 'https://hit-tool.com/';
 
-export const STORAGE_KEY = 'hourly_wage_calc_settings_v1';
+export const STORAGE_KEY = 'hourly_wage_calc_settings_v3';
 
 export const DEFAULT_WEEKLY_PATTERN = [
   { dayOfWeek: 0, hours: 0, breakMinutes: 0 }, // 日
   { dayOfWeek: 1, hours: 0, breakMinutes: 0 }, // 月
-  { dayOfWeek: 2, hours: 5, breakMinutes: 0 }, // 火
+  { dayOfWeek: 2, hours: 0, breakMinutes: 0 }, // 火
   { dayOfWeek: 3, hours: 0, breakMinutes: 0 }, // 水
-  { dayOfWeek: 4, hours: 5, breakMinutes: 0 }, // 木
+  { dayOfWeek: 4, hours: 0, breakMinutes: 0 }, // 木
   { dayOfWeek: 5, hours: 0, breakMinutes: 0 }, // 金
-  { dayOfWeek: 6, hours: 8, breakMinutes: 60 }, // 土
+  { dayOfWeek: 6, hours: 0, breakMinutes: 0 }, // 土
 ];
 
 export const getCurrentYearMonth = (): string => {
@@ -25,8 +25,8 @@ export const getCurrentYearMonth = (): string => {
 };
 
 export const DEFAULT_SETTINGS: UserShiftSettings = {
-  wage: 1100,
-  targetMonthlyIncome: 100000,
+  wage: 0,
+  targetMonthlyIncome: 0,
   transportExpense: 0,
   transportType: 'daily',
   overtimeRate: 1.25,
